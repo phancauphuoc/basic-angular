@@ -1,0 +1,16 @@
+<div class="flex justify-content-between flex-wrap mb-3">
+    <p-card header="handle at parent">
+        <p-button icon="pi pi-plus" severity="success" [style]="{'margin-right': '10px'}" (onClick)="handlePlus()">
+        </p-button>
+        <p-button icon="pi pi-minus" severity="success" (onClick)="handleMinus()"></p-button>
+    </p-card>
+    <p-card header="get value at parent">
+        <div>{{data}}</div>
+        <!-- <input [(ngModel)]="data"> -->
+    </p-card>
+</div>
+<pass-value-children [dataFormParent]="valueStateParent" (newItemEvent)="addItem($event)"
+    (newItemEvent01)="getDataFromChild($event)"></pass-value-children>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>

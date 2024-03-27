@@ -1,0 +1,72 @@
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+input[type="text"] {
+    border: solid 1px var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+}
+
+button {
+    padding: 10px;
+    border: solid 1px var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+}
+
+@media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
+    }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: 1000; */
+    /* Đảm bảo nó hiển thị trên tất cả các phần tử khác */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* Màu nền với độ trong suốt */
+    padding: 20px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    /* Đổ bóng */
+}
+
+.loading-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    /* Độ rộng của loading indicator */
+    height: 150px;
+    /* Chiều cao của loading indicator */
+}
+
+.content {
+    opacity: 0.4;
+    /* Độ mờ của nội dung */
+    /* pointer-events: none; */
+    /* Ngăn các sự kiện click hoặc hover trên nội dung khi đang mờ */
+}
